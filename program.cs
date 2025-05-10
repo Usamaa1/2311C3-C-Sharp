@@ -107,23 +107,127 @@
 //}
 
 
-for (int i = 0; i <= 40; i++)
-{
-    if( i%2 == 0)
-    {
-        Console.WriteLine("This is Even Number: "+i);
-    }
-    else
-    {
-        Console.WriteLine("This is Odd Number: " + i);
-    }
-}
+// for (int i = 0; i <= 40; i++)
+// {
+//     if( i%2 == 0)
+//     {
+//         Console.WriteLine("This is Even Number: "+i);
+//     }
+//     else
+//     {
+//         Console.WriteLine("This is Odd Number: " + i);
+//     }
+// }
 
 
 
 // 2 x 1 = 2
 // 2 x 2 = 4
 // 2 x 3 = 6
+
+
+
+
+
+
+//int[] scores = [200,300, 400, 500];
+//int[] scores = new int[5];
+
+//scores[0] = 343;
+//scores[1] = 546;
+//scores[2] = 6565;
+//scores[3] = 345;
+//scores[4] = 34534;
+//scores[5] = 378;
+
+
+
+//Console.WriteLine(scores[3]);
+
+//for (int i = 0; i < scores.Length; i++)
+//{
+//    Console.WriteLine(scores[i]);
+//}
+
+//foreach (var item in scores)
+//{
+//    Console.WriteLine(item);
+//}
+
+
+// **************** ARRAY METHODS ********************
+//int[] scores = new int[5];
+//int[] scores = { 200, 300, 900, 400, 500 };
+//string[] scores = {"200", "300", "900", "400", "500"};
+
+//Array.Sort(scores);
+//Array.Reverse(scores);
+//Array.Clear(scores,0,3);
+
+//Console.WriteLine(Array.IndexOf(scores, 900));
+
+//scores[Array.IndexOf(scores, 900)] = 45654654;
+
+
+
+//foreach (var item in scores)
+//{
+//    Console.WriteLine(item);
+//}
+
+
+
+
+//int[,] scores =
+//{
+//    { 434,545,656},
+//    {44,667,878 }
+//};
+
+//for (int i = 0; i < scores.Length; i++)
+//{
+//    Console.WriteLine(scores[i]);
+
+//}
+
+//Console.WriteLine(scores[0,2]);
+
+
+//foreach (var item in scores)
+//{
+//    Console.WriteLine(item);
+//}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
