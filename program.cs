@@ -107,24 +107,23 @@
 //}
 
 
-// for (int i = 0; i <= 40; i++)
-// {
-//     if( i%2 == 0)
-//     {
-//         Console.WriteLine("This is Even Number: "+i);
-//     }
-//     else
-//     {
-//         Console.WriteLine("This is Odd Number: " + i);
-//     }
-// }
+//for (int i = 0; i <= 40; i++)
+//{
+//    if( i%2 == 0)
+//    {
+//        Console.WriteLine("This is Even Number: "+i);
+//    }
+//    else
+//    {
+//        Console.WriteLine("This is Odd Number: " + i);
+//    }
+//}
 
 
 
 // 2 x 1 = 2
 // 2 x 2 = 4
 // 2 x 3 = 6
-
 
 
 
@@ -197,6 +196,53 @@
 //{
 //    Console.WriteLine(item);
 //}
+
+
+List<int> scores = [230,890,789,237];
+
+
+//scores.Add(240);
+
+//Console.WriteLine(scores[0]);
+//Console.WriteLine(scores[1]);
+//Console.WriteLine(scores[2]);
+//Console.WriteLine(scores[3]);
+
+
+//scores.Sort();
+//scores.Reverse();
+//scores.Remove(789);
+//scores.RemoveAt(1);
+//scores.RemoveAll( x => x > 400);
+//scores.Clear();
+//Console.WriteLine(scores.Contains(23));
+//Console.WriteLine(scores.Count);
+//scores.Insert(2, 500);
+//var myScrores =scores.ToArray();
+//Console.WriteLine(scores.Find(x => x > 400));
+
+//Console.WriteLine(scores.IndexOf(237));
+
+//Console.WriteLine(scores);
+//Console.WriteLine(myScrores);
+
+//foreach (var item in scores)
+//{
+//    Console.WriteLine(item);
+//}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
