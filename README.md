@@ -174,3 +174,157 @@ Print(3.14);
 | Performance            | Slower (boxing)       | Faster                         |
 | Flexibility            | Fixed object type     | Any type (`T`)                 |
 | Code Reusability       | Limited               | High (with `<T>`)              |
+
+
+
+---
+
+# 👶 Object-Oriented Programming (OOP) Concepts in C# (C# 9+)
+
+## 🧩 1. Class & Object
+
+> **Class** = Blueprint
+> **Object** = Real thing made from blueprint
+
+### Real-life Example:
+- Class: "Car"
+- Object: "My Honda City"
+
+### Code:
+```csharp
+class Car
+{
+    public string Model;
+    public void Drive() => Console.WriteLine($"{Model} is driving");
+}
+
+var myCar = new Car { Model = "Honda City" };
+myCar.Drive();
+```
+
+---
+
+## 🧱 2. Encapsulation
+
+> Wrapping data and methods into a single unit and restricting access using **access modifiers**.
+
+### Real-life Example:
+- Medicine in capsule = safe, cannot access inner chemicals directly
+
+### Code:
+```csharp
+class BankAccount
+{
+    private double balance;
+
+    public void Deposit(double amount)
+    {
+        if (amount > 0) balance += amount;
+    }
+
+    public double GetBalance() => balance;
+}
+
+var acc = new BankAccount();
+acc.Deposit(1000);
+Console.WriteLine(acc.GetBalance());
+```
+
+---
+
+## 👨‍👩‍👧 3. Inheritance
+
+> One class can inherit features of another.
+
+### Real-life Example:
+- Child inherits from parent
+
+### Code:
+```csharp
+class Animal
+{
+    public void Eat() => Console.WriteLine("Eating...");
+}
+
+class Dog : Animal
+{
+    public void Bark() => Console.WriteLine("Barking...");
+}
+
+var dog = new Dog();
+dog.Eat();
+dog.Bark();
+```
+
+---
+
+## 🎭 4. Polymorphism
+
+> Same name, different behavior
+
+### Types:
+- Compile-time (Method Overloading)
+- Runtime (Method Overriding)
+
+### Real-life Example:
+- "Draw" can mean drawing a line, circle, or square
+
+### Code:
+```csharp
+class Shape
+{
+    public virtual void Draw() => Console.WriteLine("Drawing shape");
+}
+
+class Circle : Shape
+{
+    public override void Draw() => Console.WriteLine("Drawing Circle");
+}
+
+Shape s = new Circle();
+s.Draw(); // Output: Drawing Circle
+```
+
+---
+
+## 🧪 5. Abstraction
+
+> Hiding complex logic and showing only important parts
+
+### Real-life Example:
+- TV Remote: You know buttons, not the wiring
+
+### Code:
+```csharp
+abstract class Payment
+{
+    public abstract void Pay();
+}
+
+class CreditCard : Payment
+{
+    public override void Pay() => Console.WriteLine("Paid with Credit Card");
+}
+
+Payment payment = new CreditCard();
+payment.Pay();
+```
+
+---
+
+## ✅ Summary Table
+
+| Concept        | Meaning                             | Example                         |
+|----------------|-------------------------------------|----------------------------------|
+| Class/Object   | Blueprint and instance              | `Car myCar = new Car();`        |
+| Encapsulation  | Hide data using private             | `private double balance;`       |
+| Inheritance    | One class from another              | `class Dog : Animal`            |
+| Polymorphism   | Many forms                          | `Draw()` in `Circle`, `Square`  |
+| Abstraction    | Hide complexity, show purpose       | `abstract class`, `interface`   |
+
+Would you like hands-on activities or a quiz for OOP next?
+
+
+
+
+
