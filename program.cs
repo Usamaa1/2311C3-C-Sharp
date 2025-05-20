@@ -615,9 +615,58 @@ foreach (var item in actions)
     Console.WriteLine(item);
 }
 
+//using System.Collections;
+
+//ArrayList list = new ArrayList();
+//list.Add(10);
+//list.Add("Hello");
+
+////int x = (int)list[0];
+////int y = (int)list[1]; // Runtime error
+
+//foreach (var i in list)
+//{
+//    Console.WriteLine(i);
+//}
 
 
+// Class (Blueprint)
 
+
+Car mehran = new();
+
+mehran.brand = "Suzuki";
+
+mehran.speed = 100;
+
+mehran.drive();
+
+Car dala = new Car { brand= "Toyota Hilux", speed=120};
+
+dala.drive();
+
+Car civic = new();
+
+Console.WriteLine(civic.brand);
+Console.WriteLine(civic.speed);
+
+//List<int> h = new() { 1,2,3,4,5};
+
+
+//Console.WriteLine(h);
+
+
+public class Car
+{
+    //public string? brand;
+    public string brand = "Default brand";
+    public int speed;
+
+    public void drive()
+    {
+        Console.WriteLine($"Driving {brand} at {speed} km/h");
+    }
+}
 
 
 
