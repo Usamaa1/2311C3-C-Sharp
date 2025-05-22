@@ -601,19 +601,19 @@ List<int> scores = [230,890,789,237];
 
 //LAST IN FIRST OUT (LIFO)
 
-var actions = new Stack<string>();
-actions.Push("Open File");
-actions.Push("Edit Text");
+// var actions = new Stack<string>();
+// actions.Push("Open File");
+// actions.Push("Edit Text");
 
-Console.WriteLine("Items before Pop:");
-Console.WriteLine(actions.Pop());
+// Console.WriteLine("Items before Pop:");
+// Console.WriteLine(actions.Pop());
 
-Console.WriteLine("Items after Pop:");
+// Console.WriteLine("Items after Pop:");
 
-foreach (var item in actions)
-{
-    Console.WriteLine(item);
-}
+// foreach (var item in actions)
+// {
+//     Console.WriteLine(item);
+// }
 
 //using System.Collections;
 
@@ -633,22 +633,22 @@ foreach (var item in actions)
 // Class (Blueprint)
 
 
-Car mehran = new();
+// Car mehran = new();
 
-mehran.brand = "Suzuki";
+// mehran.brand = "Suzuki";
 
-mehran.speed = 100;
+// mehran.speed = 100;
 
-mehran.drive();
+// mehran.drive();
 
-Car dala = new Car { brand= "Toyota Hilux", speed=120};
+// Car dala = new Car { brand= "Toyota Hilux", speed=120};
 
-dala.drive();
+// dala.drive();
 
-Car civic = new();
+// Car civic = new();
 
-Console.WriteLine(civic.brand);
-Console.WriteLine(civic.speed);
+// Console.WriteLine(civic.brand);
+// Console.WriteLine(civic.speed);
 
 //List<int> h = new() { 1,2,3,4,5};
 
@@ -656,17 +656,124 @@ Console.WriteLine(civic.speed);
 //Console.WriteLine(h);
 
 
-public class Car
-{
-    //public string? brand;
-    public string brand = "Default brand";
-    public int speed;
+// public class Car
+// {
+//     //public string? brand;
+//     public string brand = "Default brand";
+//     public int speed;
 
-    public void drive()
-    {
-        Console.WriteLine($"Driving {brand} at {speed} km/h");
-    }
+//     public void drive()
+//     {
+//         Console.WriteLine($"Driving {brand} at {speed} km/h");
+//     }
+// }
+
+
+
+
+
+
+
+// Encapsulation
+
+BankAccount amjadAccount = new();
+//amjadAccount.balance = 200;
+
+amjadAccount.Deposit(780);
+
+Console.WriteLine(amjadAccount.GetBalance());
+
+BankAccount arifAccount = new();
+
+Console.WriteLine(arifAccount.GetBalance());
+
+
+public class BankAccount
+{
+   private double balance = 0;
+
+   public void Deposit(double amount)
+   {
+       if (amount > 0) balance += amount;
+   }
+
+   public double GetBalance()
+   {
+       return balance;
+   }
 }
+
+
+
+
+
+Dog dog = new();
+dog.Eat(); // from Animal
+dog.Bark();
+
+Cat tom = new();
+
+tom.Name = "Tom";
+tom.age = 2;
+tom.breed = "French";
+tom.color = "White";
+
+tom.Eat();
+tom.animalInfo();
+//tom.Bark();
+
+public class Animal
+{
+    public string Name;
+    public int age;
+    public string breed;
+    public string color;
+    public void Eat() => Console.WriteLine("Eating");
+
+    //public void animalInfo() => Console.WriteLine("The {0}  age is: {1} whose breed is: {2} and color is: {3}",Name,age,breed,color);
+    public void animalInfo() => Console.WriteLine($"The {Name} age is: {age} whose breed is: {breed} and color is: {color}");
+
+}
+
+public class Dog : Animal
+{
+    public void Bark() => Console.WriteLine("Barking");
+}
+
+public class Cat: Dog
+{
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
