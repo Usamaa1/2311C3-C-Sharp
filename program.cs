@@ -570,6 +570,23 @@
 //}
 
 
+// ABSTRACTION
+
+Bike vehicle = new();
+vehicle.Start();
+public abstract class Vehicle
+{
+    public abstract void Start(); // only method signature
+
+    //public abstract void Start() => Console.WriteLine("Bike Started");
+}
+
+public class Bike : Vehicle
+{
+    public override void Start() => Console.WriteLine("Bike started");
+}
+
+
 
 
 
