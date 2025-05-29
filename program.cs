@@ -570,27 +570,182 @@
 //}
 
 
+
 // ABSTRACTION
 
-Bike vehicle = new();
-vehicle.Start();
-public abstract class Vehicle
-{
-    public abstract void Start(); // only method signature
+//Bike vehicle = new();
+//vehicle.Start();
+//public abstract class Vehicle
+//{
 
-    //public abstract void Start() => Console.WriteLine("Bike Started");
+//    public string Name;
+//    public string modelName;
+//    public string modelVersion;
+//    public string airBags;
+//    public virtual void Start() { } // only method signature
+
+//    //public abstract void Start() => Console.WriteLine("Bike Started");
+//    //public abstract void VehicleInfo();
+//}
+
+//public class Bike : Vehicle
+//{
+//    //public override void Start() => Console.WriteLine("Bike started");
+//}
+
+
+
+//public interface IVehicle
+//{
+
+
+//    public void Start();
+//}
+
+
+//public class Bike : IVehicle
+//{
+
+//    public void Start()
+//    {
+//        Console.WriteLine("");
+//    }
+//}
+
+
+MeezanBank amirAccount = new();
+
+amirAccount.bankBalance = 23000;
+
+Console.WriteLine("Write deposited amount: ");
+int depositedAmount = int.Parse(Console.ReadLine());
+
+amirAccount.deposit(depositedAmount);
+
+
+amirAccount.taxDeposit(230);
+
+Console.WriteLine($"Meezan Bank of Amir: {amirAccount.bankBalance}");
+
+
+AlfalahBank amirAccount2 = new();
+
+amirAccount2.bankBalance = 10000;
+amirAccount2.deposit(100);
+
+
+Console.WriteLine($"Alfalah Bank of Amir: {amirAccount2.bankBalance}");
+
+
+// ABSTRACTION
+
+//public abstract class BankAccount
+//{
+//    public string accountHolderName;
+//    public string accountNumber;
+//    public string accountType;
+//    public string pinCode;
+//    public int bankBalance;
+
+
+//    public virtual void deposit(int amount) { }
+
+//    public virtual void withdraw(int amount) { }
+
+
+//}
+
+
+
+//public class MeezanBank : BankAccount
+//{
+//    public override void deposit(int amount)
+//    {
+//        bankBalance += amount;
+//    }
+
+//    public void withdraw(int amount)
+//    {
+//        bankBalance -= amount;
+//    }
+
+
+//}
+
+//public class AlfalahBank : BankAccount
+//{
+
+//}
+
+
+// INTERFACES
+
+public interface IBankAccount
+{
+    public void deposit(int amount);
+
+    public void withdraw(int amount);
+
 }
 
-public class Bike : Vehicle
+
+public interface IGovtBankTax
 {
-    public override void Start() => Console.WriteLine("Bike started");
+    public void taxDeposit(int taxAmount);
 }
 
 
+public class MeezanBank : IBankAccount, IGovtBankTax
+{
+    public string accountHolderName;
+    public string accountNumber;
+    public string accountType;
+    public string pinCode;
+    public int bankBalance;
 
 
+    public void deposit(int amount)
+    {
+
+        bankBalance += amount;
+
+ 
+}
 
 
+    public void taxDeposit(int taxAmount)
+    {
+        if(bankBalance >= 50000)
+        {
+            bankBalance -= taxAmount;
+        }
+    }
+
+    public void withdraw(int amount)
+    {
+        bankBalance -= amount;
+    }
+
+
+}
+
+public class AlfalahBank : IBankAccount
+{
+    public string accountHolderName;
+    public string accountNumber;
+    public string accountType;
+    public string pinCode;
+    public int bankBalance;
+    public void deposit(int amount)
+    {
+
+        bankBalance += amount;
+    }
+    public void withdraw(int amount)
+    {
+        bankBalance -= amount;
+    }
+}
 
 
 
