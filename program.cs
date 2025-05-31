@@ -752,6 +752,117 @@ public class AlfalahBank : IBankAccount
 
 
 
+MeezanBank liaqatAccount = new ("Liaqat Ali Khan",234324324324,40000);
+//liaqatAccount.accountHolderName = "Liaqat Ali Khan";
+
+//liaqatAccount.bankBalance = 20000;
+//liaqatAccount.accountNumber = 743583782878432;
+//liaqatAccount.pinCode = 3432;
+
+
+Console.WriteLine($"{liaqatAccount.accountHolderName}, {liaqatAccount.accountNumber}, {liaqatAccount.bankBalance}, {liaqatAccount.pinCode}");
+
+
+
+
+
+public class BankAccount
+{
+    public string accountHolderName;
+    public double accountNumber;
+    public int bankBalance;
+    public int pinCode;
+
+    public BankAccount(string accountHolderName, double accountNumber, int bankBalance)
+    {
+        this.accountHolderName = accountHolderName;
+        this.accountNumber = accountNumber;
+        this.bankBalance = bankBalance;
+
+    }
+
+    public BankAccount(string accountHolderName, double accountNumber, int bankBalance, int pinCode)
+    {
+        this.accountHolderName = accountHolderName;
+        this.accountNumber = accountNumber;
+        this.bankBalance = bankBalance;
+        this.pinCode = pinCode;
+    }
+
+
+    public void deposit(int amount)
+    {
+        bankBalance += amount;
+    }
+
+    public void withdraw(int amount)
+    {
+        bankBalance -= amount;
+    }
+}
+
+
+public class MeezanBank : BankAccount
+{
+    public MeezanBank(string accountHolderName, double accountNumber, int bankBalance, int pinCode) : base(accountHolderName, accountNumber, bankBalance, pinCode)
+    {
+    }
+    public MeezanBank(string accountHolderName, double accountNumber, int bankBalance): base
+        (accountHolderName, accountNumber, bankBalance)
+    { }
+}
+
+
+
+//BankAccount azeemAccount = new();
+
+//BankAccount.deposit(299);
+
+//Console.WriteLine(BankAccount.bankBalance);
+
+
+
+//public static class BankAccount
+//{
+//    public static string accountHolderName = "Azeem";
+//    public static int bankBalance = 100;
+
+//    public static void deposit(int amount)
+//    {
+//        bankBalance += amount;
+//    }
+//}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
