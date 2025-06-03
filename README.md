@@ -434,10 +434,205 @@ Dictionary<string, int> stock = new Dictionary<string, int>
 | Assembly       | Compiled book of your code  |
 | Namespace      | Folders                     |
 
-Let me know if you'd like a PDF version or visual diagrams for any section! 🎓
 
+# C# 9: Getters, Setters, and `init` Properties (Immutability)
 
-Would you like hands-on activities or a quiz for OOP next?
+This guide explains the use of **getters**, **setters**, and the **`init` accessor** introduced in **C# 9**, with real-world examples and comparisons.
+
+---
+
+## ✅ Traditional Getter and Setter
+
+```csharp
+public class Student
+{
+    private string name;
+
+    public string Name
+    {
+        get { return name; }
+        set { name = value; }
+    }
+}
+```
+
+**Usage:**
+
+```csharp
+var student = new Student();
+student.Name = "Alice";
+Console.WriteLine(student.Name); // Output: Alice
+```
+
+---
+
+## ✅ Auto-Implemented Properties (C# 9 Compatible)
+
+```csharp
+public class Product
+{
+    public int Id { get; set; }
+    public string Name { get; set; }
+}
+```
+
+**Usage:**
+
+```csharp
+var product = new Product { Id = 101, Name = "Laptop" };
+Console.WriteLine($"ID: {product.Id}, Name: {product.Name}");
+```
+
+---
+
+## ✅ Read-Only Property (Only Getter)
+
+```csharp
+public class Circle
+{
+    public double Radius { get; set; }
+
+    public double Area
+    {
+        get { return Math.PI * Radius * Radius; }
+    }
+}
+```
+
+**Usage:**
+
+```csharp
+var circle = new Circle { Radius = 5 };
+Console.WriteLine($"Area: {circle.Area}");
+```
+
+---
+
+## ✅ Getters and Setters with Logic
+
+```csharp
+public class Employee
+{
+    private int salary;
+
+    public int Salary
+    {
+        get { return salary; }
+        set
+        {
+            if (value >= 0)
+                salary = value;
+            else
+                throw new ArgumentException("Salary cannot be negative");
+        }
+    }
+}
+```
+
+**Usage:**
+
+```csharp
+var emp = new Employee();
+emp.Salary = 50000;
+Console.WriteLine(emp.Salary);
+```
+
+---
+
+## 🆕 C# 9 Feature: `init` Accessor
+
+### ✅ What is Immutable?
+
+**Immutable** means:
+
+> ❌ *Cannot be changed after creation.*
+
+Once a property is set, it **cannot be modified** later.
+
+---
+
+### ✅ What is `init`?
+
+`init` is a new accessor introduced in **C# 9**.
+It allows setting a property **only once during object creation**.
+
+```csharp
+public class Person
+{
+    public string Name { get; init; }
+}
+```
+
+**Usage:**
+
+```csharp
+var p = new Person { Name = "Alice" }; // ✅ Allowed
+// p.Name = "Bob"; // ❌ Compile-time error
+```
+
+---
+
+## ✅ Example with Constructor and `init`
+
+```csharp
+public class Car
+{
+    public string Model { get; init; }
+    public int Year { get; init; }
+
+    public Car(string model)
+    {
+        Model = model;
+    }
+}
+```
+
+**Usage:**
+
+```csharp
+var car = new Car("Toyota") { Year = 2021 };
+Console.WriteLine($"Model: {car.Model}, Year: {car.Year}");
+```
+
+---
+
+## 🟨 Difference Between `set` and `init`
+
+| Feature               | `set`        | `init`            |
+| --------------------- | ------------ | ----------------- |
+| Can modify later      | ✅ Yes        | ❌ No              |
+| Set during init       | ✅ Yes        | ✅ Yes             |
+| Supports immutability | ❌ No         | ✅ Yes             |
+| Use case              | Mutable data | Immutable objects |
+
+---
+
+## ✅ Bonus: `record` Type + `init`
+
+```csharp
+public record Book
+{
+    public string Title { get; init; }
+    public string Author { get; init; }
+}
+```
+
+**Usage:**
+
+```csharp
+var book = new Book { Title = "1984", Author = "George Orwell" };
+// book.Title = "Animal Farm"; // ❌ Not allowed
+```
+
+---
+
+## 📌 Summary
+
+* Use `get`/`set` for **mutable** properties.
+* Use `init` for **immutable** properties set only during initialization.
+* `init` helps create **safe, predictable, thread-safe** code.
+* Combine `init` with `record` types for **concise, immutable models** in C# 9.
+
 
 
 
