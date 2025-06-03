@@ -680,137 +680,137 @@ Console.WriteLine($"Alfalah Bank of Amir: {amirAccount2.bankBalance}");
 
 // INTERFACES
 
-public interface IBankAccount
-{
-    public void deposit(int amount);
+// public interface IBankAccount
+// {
+//     public void deposit(int amount);
 
-    public void withdraw(int amount);
+//     public void withdraw(int amount);
 
-}
-
-
-public interface IGovtBankTax
-{
-    public void taxDeposit(int taxAmount);
-}
+// }
 
 
-public class MeezanBank : IBankAccount, IGovtBankTax
-{
-    public string accountHolderName;
-    public string accountNumber;
-    public string accountType;
-    public string pinCode;
-    public int bankBalance;
+// public interface IGovtBankTax
+// {
+//     public void taxDeposit(int taxAmount);
+// }
 
 
-    public void deposit(int amount)
-    {
+// public class MeezanBank : IBankAccount, IGovtBankTax
+// {
+//     public string accountHolderName;
+//     public string accountNumber;
+//     public string accountType;
+//     public string pinCode;
+//     public int bankBalance;
 
-        bankBalance += amount;
+
+//     public void deposit(int amount)
+//     {
+
+//         bankBalance += amount;
 
  
-}
+// }
 
 
-    public void taxDeposit(int taxAmount)
-    {
-        if(bankBalance >= 50000)
-        {
-            bankBalance -= taxAmount;
-        }
-    }
+//     public void taxDeposit(int taxAmount)
+//     {
+//         if(bankBalance >= 50000)
+//         {
+//             bankBalance -= taxAmount;
+//         }
+//     }
 
-    public void withdraw(int amount)
-    {
-        bankBalance -= amount;
-    }
-
-
-}
-
-public class AlfalahBank : IBankAccount
-{
-    public string accountHolderName;
-    public string accountNumber;
-    public string accountType;
-    public string pinCode;
-    public int bankBalance;
-    public void deposit(int amount)
-    {
-
-        bankBalance += amount;
-    }
-    public void withdraw(int amount)
-    {
-        bankBalance -= amount;
-    }
-}
+//     public void withdraw(int amount)
+//     {
+//         bankBalance -= amount;
+//     }
 
 
+// }
 
+// public class AlfalahBank : IBankAccount
+// {
+//     public string accountHolderName;
+//     public string accountNumber;
+//     public string accountType;
+//     public string pinCode;
+//     public int bankBalance;
+//     public void deposit(int amount)
+//     {
 
-
-
-MeezanBank liaqatAccount = new ("Liaqat Ali Khan",234324324324,40000);
-//liaqatAccount.accountHolderName = "Liaqat Ali Khan";
-
-//liaqatAccount.bankBalance = 20000;
-//liaqatAccount.accountNumber = 743583782878432;
-//liaqatAccount.pinCode = 3432;
-
-
-Console.WriteLine($"{liaqatAccount.accountHolderName}, {liaqatAccount.accountNumber}, {liaqatAccount.bankBalance}, {liaqatAccount.pinCode}");
+//         bankBalance += amount;
+//     }
+//     public void withdraw(int amount)
+//     {
+//         bankBalance -= amount;
+//     }
+// }
 
 
 
 
 
-public class BankAccount
-{
-    public string accountHolderName;
-    public double accountNumber;
-    public int bankBalance;
-    public int pinCode;
 
-    public BankAccount(string accountHolderName, double accountNumber, int bankBalance)
-    {
-        this.accountHolderName = accountHolderName;
-        this.accountNumber = accountNumber;
-        this.bankBalance = bankBalance;
+// MeezanBank liaqatAccount = new ("Liaqat Ali Khan",234324324324,40000);
+// //liaqatAccount.accountHolderName = "Liaqat Ali Khan";
 
-    }
-
-    public BankAccount(string accountHolderName, double accountNumber, int bankBalance, int pinCode)
-    {
-        this.accountHolderName = accountHolderName;
-        this.accountNumber = accountNumber;
-        this.bankBalance = bankBalance;
-        this.pinCode = pinCode;
-    }
+// //liaqatAccount.bankBalance = 20000;
+// //liaqatAccount.accountNumber = 743583782878432;
+// //liaqatAccount.pinCode = 3432;
 
 
-    public void deposit(int amount)
-    {
-        bankBalance += amount;
-    }
-
-    public void withdraw(int amount)
-    {
-        bankBalance -= amount;
-    }
-}
+// Console.WriteLine($"{liaqatAccount.accountHolderName}, {liaqatAccount.accountNumber}, {liaqatAccount.bankBalance}, {liaqatAccount.pinCode}");
 
 
-public class MeezanBank : BankAccount
-{
-    public MeezanBank(string accountHolderName, double accountNumber, int bankBalance, int pinCode) : base(accountHolderName, accountNumber, bankBalance, pinCode)
-    {
-    }
-    public MeezanBank(string accountHolderName, double accountNumber, int bankBalance): base
-        (accountHolderName, accountNumber, bankBalance)
-    { }
-}
+
+
+
+// public class BankAccount
+// {
+//     public string accountHolderName;
+//     public double accountNumber;
+//     public int bankBalance;
+//     public int pinCode;
+
+//     public BankAccount(string accountHolderName, double accountNumber, int bankBalance)
+//     {
+//         this.accountHolderName = accountHolderName;
+//         this.accountNumber = accountNumber;
+//         this.bankBalance = bankBalance;
+
+//     }
+
+//     public BankAccount(string accountHolderName, double accountNumber, int bankBalance, int pinCode)
+//     {
+//         this.accountHolderName = accountHolderName;
+//         this.accountNumber = accountNumber;
+//         this.bankBalance = bankBalance;
+//         this.pinCode = pinCode;
+//     }
+
+
+//     public void deposit(int amount)
+//     {
+//         bankBalance += amount;
+//     }
+
+//     public void withdraw(int amount)
+//     {
+//         bankBalance -= amount;
+//     }
+// }
+
+
+// public class MeezanBank : BankAccount
+// {
+//     public MeezanBank(string accountHolderName, double accountNumber, int bankBalance, int pinCode) : base(accountHolderName, accountNumber, bankBalance, pinCode)
+//     {
+//     }
+//     public MeezanBank(string accountHolderName, double accountNumber, int bankBalance): base
+//         (accountHolderName, accountNumber, bankBalance)
+//     { }
+// }
 
 
 
@@ -834,6 +834,93 @@ public class MeezanBank : BankAccount
 //}
 
 
+
+
+
+
+
+
+
+
+//Student amir = new();
+//amir.StudentAge = 200;
+//amir.studentName = "Amir";
+//amir.studentClass = "Matric";
+
+//Console.WriteLine($"{amir.studentName}, {amir.studentClass}, {amir.StudentAge}");
+
+
+
+//public class Student
+//{
+//    public string studentName;
+//    private int studentAge;
+//    public string studentClass;
+
+//    public int StudentAge
+//    {
+//        get { return studentAge; }
+//        set
+//        {
+//            if (value <= 20)
+//            {
+//                studentAge = value;
+//            }
+//            else
+//            {
+//                throw new Exception("Kindly enter valid age between 1 to 20");
+//            }
+
+//        }
+//    }
+
+
+
+
+//}
+
+
+//Circle circle = new();
+//circle.Radius = 23;
+////circle.Area = 23;
+//Console.WriteLine(circle.Area);
+//public class Circle
+//{
+//    public double Radius { get; set; }
+
+//    public double Area
+//    {
+//        get { return Math.PI * Radius * Radius; }
+//    }
+//}
+
+
+//Car mehran = new("2024") { Year= 2023};
+////mehran.Year = 2023;
+////mehran.Model = 2022;
+///onsole.WriteLine($"{mehran.Model}, {mehran.Year}");
+//public class Car
+//{
+//    public string Model { get; init; }
+//    public int Year { get; init; }
+//    public Car(string model)
+//    {
+//        Model = model;
+//    }
+//}
+
+
+
+Book book1 = new() { publishedYear= 2023};
+//book1.publishedYear = 2023;
+book1.bookName = "Tale of the Nine Tailed";
+Console.WriteLine($"{book1.bookName}, {book1.publishedYear}");
+
+public record Book
+{
+    public int publishedYear { get; init; }
+    public string bookName { get; set; }
+}
 
 
 
